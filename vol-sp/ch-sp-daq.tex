@@ -180,12 +180,12 @@ candidates with low deposited energy each (\SI{10}{MeV} threshold) are found ove
 granularity of the detector readout elements, a hierarchical data selection subsystem is employed to
 provide data processing and triggering, and facilitate optional data reduction and filtering. 
 
-The \dword{daq}   system is required to yield $>$99\% efficiency for particles depositing $>$100 MeV
-of energy in the detector, for localized high-energy triggers; it is also required to yield
-sufficient efficiency for low-energy deposition in the detector as needed to yield $>$90\% galactic
-supernova burst trigger coverage, for extended low-energy triggers. Galactic coverage is defined as
-the supernova burst trigger efficiency, weighted by the probability of a galactic \dword{snb} (which
-is \dword{snb} distance-dependent).
+The \dword{daq} system is required to yield $>$99\% efficiency for particles depositing \SI{>100}{MeV}
+of energy in the detector, for localized high-energy triggers; it is also required to yield sufficient efficiency for low-energy deposition in the detector as needed to yield $>$95\% on \dword{snb} events producing at least 50 neutrino interactions in a \SI{10}{\kilo\tonne} module.
+
+% sufficient efficiency for low-energy deposition in the detector as needed to yield $>$95\% supernova burst trigger coverage, for extended low-energy triggers. Galactic coverage is defined as
+% the supernova burst trigger efficiency, weighted by the probability of a galactic \dword{snb} (which
+% is \dword{snb} distance-dependent).
 
 By offline considerations, the \dword{daq} is required to reduce the data volume for offline permanent storage to  \offsitepbpy.
 A far detector composed of four single-phase modules employing a full-detector, \spreadout readout strategy will be limited by this to an average readout rate of \SI{0.3}{\hertz}. 
@@ -636,17 +636,17 @@ It may also be propagated to the \dword{etl} and from there it may be
 distributed to other \dwords{detmodule} or other detector systems
 (e.g. calibration) for consideration.
 
-The \dword{daqdss} must select with high efficiency ($>$99\%) data associated with calibration
-signals, as well as beam interactions,
-atmospheric neutrinos, rare baryon-number-violating events, and cosmic
-ray events that deposit visible energy in excess of 100 MeV. 
-It must also select data associated with potential galactic \dwords{snb}, with galactic coverage
-of $>$90\%. Galactic coverage is defined as efficiency-weighted probability of an intra-galactic \dword{snb}. 
-To meet the requirement that the \dword{dune} \dword{fd} maintain
-$<$\offsitepbpy to permanent storage, the \dword{daqdss}
-subsystem must make \dword{daqdsn} decisions in a way that allows the \dword{daq} 
-system to reduce its input data by almost four orders of magnitude
-without jeopardizing the above efficiencies.
+The \dword{daqdss} must select with high efficiency ($>$99\%) data associated
+with calibration signals, as well as beam interactions, atmospheric neutrinos,
+rare baryon-number-violating events, and cosmic ray events that deposit
+visible energy in excess of \SI{100}{MeV}. It must also select data associated with
+potential \dwords{snb}, for events producing at least 50 neutrino interactions in a \SI{10}{\kilo\tonne} module.
+
+To meet the requirement that the \dword{dune} \dword{fd}
+maintain $<$\offsitepbpy to permanent storage, the \dword{daqdss} subsystem
+must make \dword{daqdsn} decisions in a way that allows the \dword{daq} 
+system to reduce its input data by almost four orders of magnitude without
+jeopardizing the above efficiencies.
 
 To meet its requirements, the \dword{daqdss} subsystem design follows a hierarchical data selection strategy, where low-level decisions are fed forward into higher-level ones until a module-level trigger is activated. 
 The hierarchy is illustrated in Figure~\ref{fig:daq:data-selection-hierarchy} and details may be found in~\citedocdb{11215}.
@@ -1507,7 +1507,7 @@ efficiency for any individual \dword{snb} neutrino interaction is on the order
 of 20-30\%. Simulations have further demonstrated that a
 multiplicity-based \dword{snb} trigger decision that integrates low-energy
 trigger candidates over an up to 10 seconds
-integration window yields high ($>90$\%) galactic coverage while
+integration window yields high ($>95$\%) coverage while
 keeping fake \dword{snb} trigger rates to one per month, in accordance with system
 requirements. An energy-weighted multiplicity count scheme could be
 applied to further increase efficiency and minimize background.
