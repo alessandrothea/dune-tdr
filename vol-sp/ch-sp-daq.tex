@@ -132,11 +132,14 @@ the \dword{daq} system, reaches multiple
 terabits per second, significant data buffering and processing
 resources are needed as part of the design.
 
-The \dword{dune} \dword{fd} modules employ two active detector components from which the \dword{daq} system must acquire data: the \dfirst{tpc} and the \dfirst{pds}. The two components access the physics by sensing and collecting signals associated with very different sensing time scales.
+The \dword{dune} \dword{fd} modules employ two active detector components from
+which the \dword{daq} system must acquire data: the \dfirst{tpc} and the
+\dfirst{pds}. The two components access the physics by sensing and collecting
+signals associated with very different sensing time scales.
 
 Ionization charge measurement by the \dword{tpc} for any given activity in the detector requires a nominal recording of data over a time window of order \SIrange{1}{10}{\milli\second}. 
 This time scale is determined by the ionization electron drift speed in \lar and the detector dimension along the drift direction, and is nominally set to \spreadout, corresponding to 2.4$\times$\SI{2.25}{\milli\second}.
-The latter (\SI{2.25}{\milli\second}) assumes DUNE's nominal drift electric field of 500~V/cm.
+The latter (\SI{2.25}{\milli\second}) assumes DUNE's nominal drift electric field of \SI{500}{\volt/\centi\meter}.
 This assures the capture of ionization information from at least a full drift before and after a trigger.
 Given the ability to  immediately record a subsequent readout, early commissioning data will be used to evaluate and optimize this nominal readout time.
 
@@ -152,12 +155,12 @@ the \dword{tpc} data, which is sent out from the front-end electronics as a cont
 Figure \ref{fig:daq-rates} provides the expected activity rates in a
 single far detector module as a function of true energy associated
 with given types of signal.
-At low energy ($<$10 MeV), activity is dominated by radiological backgrounds
+At low energy (\SI{<10}{MeV}), activity is dominated by radiological backgrounds
 intrinsic to the detector, and
 low-energy solar neutrino interactions. Supernova burst neutrinos,
 expected to arrive at a galactic \dword{snb} rate of once per century, 
-would span the 10-30 MeV range. At higher energies (generally
-above 100 MeV), rates are dominated by cosmic rays, beam neutrino interactions,
+would span the \SIrange{10}{30}{MeV} range. At higher energies (generally
+above \SI{100}{MeV}), rates are dominated by cosmic rays, beam neutrino interactions,
 and atmospheric neutrino interactions. With the exception of supernova
 burst neutrinos, the activity associated with any of these physics
 signals is localized in space and particularly in time. Supernova burst
@@ -1048,7 +1051,7 @@ The following sections describe each \dfirst{daqccm} subsystem, covering interna
 
 \subsubsection{Access}
 \label{sec:daq:design:ccm:access}
-Actions are defined as any kind of human interaction with the \dfirst{daqccm}. The access subsystem is responsible for the action delegation to internal function calls and procedures. It’s implementation is driven by the control, configuration and monitoring interface specifications, and protects the direct access to detector and infrastructural resources. It also controls authentication and authorization, which locks different functionalities to certain actor groups and subsystems. As an example, only the detector experts can modify frontend configuration through the configuration interfaces, or only an expert user can exclude an APA’s readout from data taking. 
+Actions are defined as any kind of human interaction with the \dfirst{daqccm}. The access subsystem is responsible for the action delegation to internal function calls and procedures. It’s implementation is driven by the control, configuration and monitoring interface specifications, and protects the direct access to detector and infrastructural resources. It also controls authentication and authorization, which locks different functionalities to certain actor groups and subsystems. As an example, only the detector experts can modify frontend configuration through the configuration interfaces, or only an expert user can exclude an APA's readout from data taking. 
 
 
 \subsubsection{Control}
